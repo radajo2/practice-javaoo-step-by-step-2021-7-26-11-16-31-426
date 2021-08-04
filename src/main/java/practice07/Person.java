@@ -29,4 +29,11 @@ public class Person {
         return MessageFormat.format("My name is {0}. I am {1} years old.", name, age);
     }
 
+    @Override
+    public boolean equals(Object object) {
+        if (object instanceof Person) {
+            return ((Person) object).getId() == this.getId();
+        }
+        return false;
+    }
 }
