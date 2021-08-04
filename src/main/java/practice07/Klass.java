@@ -1,7 +1,8 @@
 package practice07;
 
 public class Klass {
-    public int number;
+    private int number;
+    private Student leader;
 
     public Klass(int number) {
         this.number = number;
@@ -13,5 +14,13 @@ public class Klass {
 
     public String getDisplayName() {
         return "Class " + number;
+    }
+
+    public void assignLeader (Student student){
+        this.leader = student;
+    }
+
+    public Student getLeader() {
+        return leader;
     }
 }
