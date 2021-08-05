@@ -1,5 +1,7 @@
 package practice07;
 
+import practice06.Student;
+
 import java.text.MessageFormat;
 
 public class Teacher extends Person{
@@ -23,6 +25,16 @@ public class Teacher extends Person{
         }
         else {
             return super.introduce() + " I am a Teacher. I teach No Class.";
+        }
+    }
+
+    public String introduceWith(Student student){
+        String teacher = super.introduce() + " " + "I am a Teacher. ";
+
+        if (student.getKlass().getNumber() == (this.getKlass().getNumber())) {
+            return String.format(teacher + "I teach %s.", student.getName());
+        }else{
+            return String.format(teacher + "I don't teach %s.", student.getName());
         }
     }
 }
