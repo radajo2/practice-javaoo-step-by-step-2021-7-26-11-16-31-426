@@ -1,5 +1,7 @@
 package practice07;
 
+import java.text.MessageFormat;
+
 public class Student extends Person{
     private Klass klass;
 
@@ -15,4 +17,8 @@ public class Student extends Person{
     public Klass getKlass() {
         return klass;
     }
+    public String introduce() {
+        return MessageFormat.format(super.introduce() + " I am a Student. I am at Class {0}.", klass.getNumber());
+    }
+
 }
