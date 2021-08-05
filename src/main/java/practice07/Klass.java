@@ -16,7 +16,7 @@ public class Klass {
         return "Class " + number;
     }
 
-    public void assignLeader (Student student){
+    public void assignLeader(Student student){
         this.leader = student;
     }
 

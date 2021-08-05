@@ -18,7 +18,7 @@ public class Student extends Person{
         return klass;
     }
     public String introduce() {
-        return MessageFormat.format(super.introduce() + " I am a Student. I am at Class {0}.", klass.getNumber());
+        return MessageFormat.format(super.introduce() + " I am a Student. I am {0}{1}.", ((klass.getLeader() != null)?"Leader of ":"at "), klass.getDisplayName());
     }
 
 }
