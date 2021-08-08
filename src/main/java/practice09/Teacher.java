@@ -30,4 +30,8 @@ public class Teacher extends Person{
         else
             return teacher + "I teach No Class.";
     }
+
+    public boolean isTeaching(Student student) {
+        return klass.stream().anyMatch(klass->klass.isIn(student));
+    }
 }
