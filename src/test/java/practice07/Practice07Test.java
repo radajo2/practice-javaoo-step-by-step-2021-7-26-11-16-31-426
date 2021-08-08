@@ -20,6 +20,7 @@ public class Practice07Test {
         assertThat(person.getAge()).isEqualTo(21);
     }
 
+    //checking if the same ID number
     @Test
     public void should_person_with_same_id_be_same_one() throws Exception {
         Person person1 = new Person(1, "Tom", 21);
@@ -65,6 +66,7 @@ public class Practice07Test {
         assertThat(tom.introduce()).isEqualTo("My name is Tom. I am 21 years old. I am a Student. I am at Class 2.");
     }
 
+    //Class leader
     @Test
     public void should_student_introduce_itself_as_class_leader() throws Exception {
         Student tom = new Student(1, "Tom", 21, klass);
@@ -99,10 +101,10 @@ public class Practice07Test {
         assertThat(tom.introduceWith(jerry)).isEqualTo("My name is Tom. I am 21 years old. I am a Teacher. I teach Jerry.");
     }
 
-//    @Test
-//    public void should_teacher_introduce_a_student_it_does_not_teach() throws Exception {
-//        Teacher tom = new Teacher(1, "Tom", 21, new Klass(1));
-//        Student jerry = new Student(1, "Jerry", 8, new Klass(2));
-//        assertThat(tom.introduceWith(jerry)).isEqualTo("My name is Tom. I am 21 years old. I am a Teacher. I don't teach Jerry.");
-//    }
+    @Test
+    public void should_teacher_introduce_a_student_it_does_not_teach() throws Exception {
+        Teacher tom = new Teacher(1, "Tom", 21, new Klass(1));
+        Student jerry = new Student(1, "Jerry", 8, new Klass(2));
+        assertThat(tom.introduceWith(jerry)).isEqualTo("My name is Tom. I am 21 years old. I am a Teacher. I don't teach Jerry.");
+    }
 }
