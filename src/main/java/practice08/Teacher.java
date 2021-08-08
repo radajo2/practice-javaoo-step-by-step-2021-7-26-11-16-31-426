@@ -1,6 +1,5 @@
 package practice08;
 
-
 import java.text.MessageFormat;
 
 public class Teacher extends  Person{
@@ -26,6 +25,13 @@ public class Teacher extends  Person{
         }
         else
             return teacher + "I teach No Class.";
+    }
+
+    public String introduceWith(Student student){
+        if (student.getKlass().getNumber() == (this.getKlass().getNumber())) {
+            return String.format(teacher + "I teach %s.", student.getName());
+        }else
+            return String.format(teacher + "I don't teach %s.", student.getName());
     }
 
 }
