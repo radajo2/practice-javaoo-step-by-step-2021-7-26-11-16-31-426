@@ -32,4 +32,8 @@ public class Klass {
     public Student getLeader() {
         return leader;
     }
+
+    public void appendMember(Student member) {
+        students.add(member);
+    }
 }
