@@ -34,4 +34,11 @@ public class Teacher extends Person{
     public boolean isTeaching(Student student) {
         return klass.stream().anyMatch(klass->klass.isIn(student));
     }
+
+    public String introduceWith(Student student){
+        if (isTeaching(student)) {
+            return String.format(teacher + "I teach %s.", student.getName());
+        }else
+            return String.format(teacher + "I don't teach %s.", student.getName());
+    }
 }
