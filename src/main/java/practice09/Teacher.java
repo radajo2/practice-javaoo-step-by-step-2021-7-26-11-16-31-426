@@ -20,15 +20,17 @@ public class Teacher extends Person{
         return klass;
     }
 
-    String teacher = super.introduce() + " " + "I am a Teacher. ";
+    public String getTeacherBasicIntroduction() {
+        return super.introduce() + " " + "I am a Teacher. ";
+    }
 
     public String introduce() {
         if (klass != null)
         {
-            return MessageFormat.format(teacher + "I teach Class {0}.", klass.stream().map(klassVal -> String.valueOf(klassVal.getNumber())).collect(Collectors.joining(", ")));
+            return MessageFormat.format(getTeacherBasicIntroduction() + "I teach Class {0}.", klass.stream().map(klassVal -> String.valueOf(klassVal.getNumber())).collect(Collectors.joining(", ")));
         }
         else
-            return teacher + "I teach No Class.";
+            return getTeacherBasicIntroduction() + "I teach No Class.";
     }
 
     public boolean isTeaching(Student student) {
@@ -37,8 +39,8 @@ public class Teacher extends Person{
 
     public String introduceWith(Student student){
         if (isTeaching(student)) {
-            return String.format(teacher + "I teach %s.", student.getName());
+            return String.format(getTeacherBasicIntroduction() + "I teach %s.", student.getName());
         }else
-            return String.format(teacher + "I don't teach %s.", student.getName());
+            return String.format(getTeacherBasicIntroduction() + "I don't teach %s.", student.getName());
     }
 }
